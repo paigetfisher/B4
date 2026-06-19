@@ -2504,7 +2504,7 @@
           <div style="margin-bottom:4px;">
             <div style="margin-bottom:16px;display:flex;align-items:center;justify-content:space-between;gap:12px;">
       <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
-        <h3 id="title-positive-cat" style="font-size:20px;font-weight:600;color:#0A091B;font-family:'Poppins',sans-serif;margin:0;display:none;">Net sales by category</h3>
+        <h3 id="title-positive-cat" style="font-size:20px;font-weight:600;color:#0A091B;font-family:'Poppins',sans-serif;margin:0;display:none;">Net sales by party size</h3>
         <h3 id="title-positive-time" style="font-size:20px;font-weight:600;color:#0A091B;font-family:'Poppins',sans-serif;margin:0;">Net sales over time</h3>
       </div>
       <div style="background:#E5E9F1;border-radius:96px;padding:4px;display:flex;gap:4px;flex-shrink:0;">
@@ -2514,45 +2514,63 @@
     </div>
             <div id="chart-positive-cat" style="display:none;"><div style="padding:4px 0 12px;">
               <div style="display:flex;align-items:stretch;gap:4px;">
-                <div style="display:flex;flex-direction:column;justify-content:space-between;flex-shrink:0;padding-bottom:28px;text-align:right;">
-                  <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;white-space:nowrap;">560</span>
-                  <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;white-space:nowrap;">420</span>
-                  <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;white-space:nowrap;">280</span>
-                  <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;white-space:nowrap;">140</span>
-                  <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;white-space:nowrap;">0</span>
+                <div style="display:flex;flex-direction:column;justify-content:space-between;flex-shrink:0;padding-bottom:74px;text-align:right;">
+                  <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;white-space:nowrap;">$10k</span>
+                  <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;white-space:nowrap;">$7.5k</span>
+                  <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;white-space:nowrap;">$5k</span>
+                  <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;white-space:nowrap;">$2.5k</span>
+                  <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;white-space:nowrap;">$0</span>
                 </div>
                 <div style="flex:1;min-width:0;display:flex;flex-direction:column;">
                   <svg width="100%" height="210" viewBox="0 0 440 228" preserveAspectRatio="none" style="display:block;">
                     <line x1="0" y1="20" x2="440" y2="20" stroke="#E2E9F3" stroke-width="1"/>
-                    <line x1="0" y1="75" x2="440" y2="75" stroke="#E2E9F3" stroke-width="1"/>
-                    <line x1="0" y1="130" x2="440" y2="130" stroke="#E2E9F3" stroke-width="1"/>
-                    <line x1="0" y1="185" x2="440" y2="185" stroke="#E2E9F3" stroke-width="1"/>
+                    <line x1="0" y1="71" x2="440" y2="71" stroke="#E2E9F3" stroke-width="1"/>
+                    <line x1="0" y1="122" x2="440" y2="122" stroke="#E2E9F3" stroke-width="1"/>
+                    <line x1="0" y1="173" x2="440" y2="173" stroke="#E2E9F3" stroke-width="1"/>
                     <line x1="0" y1="224" x2="440" y2="224" stroke="#E2E9F3" stroke-width="1"/>
-                    <path d="M43,224 L43,85 Q43,81 47,81 L63,81 Q67,81 67,85 L67,224 Z" fill="#D4DDFF" style="cursor:pointer" onmouseenter="showDetailTip(event,'May 23','351 guests','3-wk avg: 386')" onmouseleave="hideDetailTip()"/>
-                    <path d="M153,224 L153,52 Q153,48 157,48 L173,48 Q177,48 177,52 L177,224 Z" fill="#D4DDFF" style="cursor:pointer" onmouseenter="showDetailTip(event,'May 30','432 guests','3-wk avg: 386')" onmouseleave="hideDetailTip()"/>
-                    <path d="M263,224 L263,75 Q263,71 267,71 L283,71 Q287,71 287,75 L287,224 Z" fill="#D4DDFF" style="cursor:pointer" onmouseenter="showDetailTip(event,'Jun 6','376 guests','3-wk avg: 386')" onmouseleave="hideDetailTip()"/>
-                    <path d="M373,224 L373,28 Q373,24 377,24 L393,24 Q397,24 397,28 L397,224 Z" fill="#04B4A2" style="cursor:pointer" onmouseenter="showDetailTip(event,'Jun 13 (this week)','518 guests','↑ 34.2% vs. 3-wk avg')" onmouseleave="hideDetailTip()"/>
+                    <!-- 1–2 guests: avg then last-week -->
+                    <path d="M33,224 L33,138 Q33,134 37,134 L47,134 Q51,134 51,138 L51,224 Z" fill="#D4DDFF" style="cursor:pointer" onmouseenter="showDetailTip(event,'1–2 guests (3-wk avg)','$4,200',null)" onmouseleave="hideDetailTip()"/>
+                    <path d="M59,224 L59,126 Q59,122 63,122 L73,122 Q77,122 77,126 L77,224 Z" fill="#04B4A2" style="cursor:pointer" onmouseenter="showDetailTip(event,'1–2 guests (last week)','$4,800','↑ 14.3% vs. 3-wk avg')" onmouseleave="hideDetailTip()"/>
+                    <!-- 3–4 guests -->
+                    <path d="M143,224 L143,51 Q143,47 147,47 L157,47 Q161,47 161,51 L161,224 Z" fill="#D4DDFF" style="cursor:pointer" onmouseenter="showDetailTip(event,'3–4 guests (3-wk avg)','$8,500',null)" onmouseleave="hideDetailTip()"/>
+                    <path d="M169,224 L169,36 Q169,32 173,32 L183,32 Q187,32 187,36 L187,224 Z" fill="#04B4A2" style="cursor:pointer" onmouseenter="showDetailTip(event,'3–4 guests (last week)','$9,200','↑ 8.2% vs. 3-wk avg')" onmouseleave="hideDetailTip()"/>
+                    <!-- 5–6 guests -->
+                    <path d="M253,224 L253,85 Q253,81 257,81 L267,81 Q271,81 271,85 L271,224 Z" fill="#D4DDFF" style="cursor:pointer" onmouseenter="showDetailTip(event,'5–6 guests (3-wk avg)','$6,800',null)" onmouseleave="hideDetailTip()"/>
+                    <path d="M279,224 L279,59 Q279,55 283,55 L293,55 Q297,55 297,59 L297,224 Z" fill="#04B4A2" style="cursor:pointer" onmouseenter="showDetailTip(event,'5–6 guests (last week)','$8,100','↑ 19.1% vs. 3-wk avg')" onmouseleave="hideDetailTip()"/>
+                    <!-- 7+ guests -->
+                    <path d="M363,224 L363,159 Q363,155 367,155 L377,155 Q381,155 381,159 L381,224 Z" fill="#D4DDFF" style="cursor:pointer" onmouseenter="showDetailTip(event,'7+ guests (3-wk avg)','$3,200',null)" onmouseleave="hideDetailTip()"/>
+                    <path d="M389,224 L389,130 Q389,126 393,126 L403,126 Q407,126 407,130 L407,224 Z" fill="#04B4A2" style="cursor:pointer" onmouseenter="showDetailTip(event,'7+ guests (last week)','$4,600','↑ 43.8% vs. 3-wk avg')" onmouseleave="hideDetailTip()"/>
                   </svg>
                   <div style="display:grid;grid-template-columns:repeat(4,1fr);padding-top:6px;padding-bottom:4px;">
-                    <span style="font-size:12px;color:#676D74;font-family:'Roboto',sans-serif;text-align:center;">May 23</span>
-                    <span style="font-size:12px;color:#676D74;font-family:'Roboto',sans-serif;text-align:center;">May 30</span>
-                    <span style="font-size:12px;color:#676D74;font-family:'Roboto',sans-serif;text-align:center;">Jun 6</span>
-                    <span style="font-size:12px;color:#676D74;font-family:'Roboto',sans-serif;text-align:center;">Jun 13</span>
+                    <span style="font-size:12px;color:#676D74;font-family:'Roboto',sans-serif;text-align:center;">1–2 guests</span>
+                    <span style="font-size:12px;color:#676D74;font-family:'Roboto',sans-serif;text-align:center;">3–4 guests</span>
+                    <span style="font-size:12px;color:#676D74;font-family:'Roboto',sans-serif;text-align:center;">5–6 guests</span>
+                    <span style="font-size:12px;color:#676D74;font-family:'Roboto',sans-serif;text-align:center;">7+ guests</span>
+                  </div>
+                  <div style="display:flex;justify-content:center;gap:24px;padding-top:16px;padding-bottom:12px;flex-wrap:wrap;">
+                    <div style="display:flex;align-items:center;gap:8px;">
+                      <div style="width:16px;height:16px;border-radius:4px;background:#D4DDFF;flex-shrink:0;"></div>
+                      <span style="font-size:13px;color:#676D74;font-family:'Roboto',sans-serif;">3-wk avg</span>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:8px;">
+                      <div style="width:16px;height:16px;border-radius:4px;background:#04B4A2;flex-shrink:0;"></div>
+                      <span style="font-size:13px;color:#676D74;font-family:'Roboto',sans-serif;">Last week</span>
+                    </div>
                   </div>
                 </div>
-                <div style="display:flex;flex-direction:column;justify-content:space-between;flex-shrink:0;padding-bottom:28px;text-align:left;">
-                  <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;white-space:nowrap;">560</span>
-                  <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;white-space:nowrap;">420</span>
-                  <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;white-space:nowrap;">280</span>
-                  <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;white-space:nowrap;">140</span>
-                  <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;white-space:nowrap;">0</span>
+                <div style="display:flex;flex-direction:column;justify-content:space-between;flex-shrink:0;padding-bottom:74px;text-align:left;">
+                  <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;white-space:nowrap;">$10k</span>
+                  <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;white-space:nowrap;">$7.5k</span>
+                  <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;white-space:nowrap;">$5k</span>
+                  <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;white-space:nowrap;">$2.5k</span>
+                  <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;white-space:nowrap;">$0</span>
                 </div>
               </div>
             </div></div>
 <div id="chart-positive-time">
   <div style="padding:4px 0 12px;">
     <div style="display:flex;align-items:stretch;gap:4px;">
-      <div style="display:flex;flex-direction:column;justify-content:space-between;flex-shrink:0;padding-bottom:28px;text-align:right;">
+      <div style="display:flex;flex-direction:column;justify-content:space-between;flex-shrink:0;padding-bottom:74px;text-align:right;">
         <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;white-space:nowrap;">600</span>
         <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;white-space:nowrap;">450</span>
         <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;white-space:nowrap;">300</span>
@@ -2562,14 +2580,14 @@
       <div style="flex:1;min-width:0;display:flex;flex-direction:column;">
         <svg width="100%" height="210" viewBox="0 0 440 228" preserveAspectRatio="none" style="display:block;">
           <line x1="0" y1="20" x2="440" y2="20" stroke="#E2E9F3" stroke-width="1"/>
-          <line x1="0" y1="75" x2="440" y2="75" stroke="#E2E9F3" stroke-width="1"/>
-          <line x1="0" y1="130" x2="440" y2="130" stroke="#E2E9F3" stroke-width="1"/>
-          <line x1="0" y1="185" x2="440" y2="185" stroke="#E2E9F3" stroke-width="1"/>
+          <line x1="0" y1="71" x2="440" y2="71" stroke="#E2E9F3" stroke-width="1"/>
+          <line x1="0" y1="122" x2="440" y2="122" stroke="#E2E9F3" stroke-width="1"/>
+          <line x1="0" y1="173" x2="440" y2="173" stroke="#E2E9F3" stroke-width="1"/>
           <line x1="0" y1="224" x2="440" y2="224" stroke="#E2E9F3" stroke-width="1"/>
           <path d="M41,224 L41,92 Q41,88 45,88 L65,88 Q69,88 69,92 L69,224 Z" fill="#D4DDFF" style="cursor:pointer" onmouseenter="showDetailTip(event,'Week of May 16','321 guests',null)" onmouseleave="hideDetailTip()"/>
           <path d="M151,224 L151,85 Q151,81 155,81 L175,81 Q179,81 179,85 L179,224 Z" fill="#D4DDFF" style="cursor:pointer" onmouseenter="showDetailTip(event,'Week of May 23','351 guests',null)" onmouseleave="hideDetailTip()"/>
           <path d="M261,224 L261,52 Q261,48 265,48 L285,48 Q289,48 289,52 L289,224 Z" fill="#D4DDFF" style="cursor:pointer" onmouseenter="showDetailTip(event,'Week of May 30','432 guests',null)" onmouseleave="hideDetailTip()"/>
-          <path d="M371,224 L371,28 Q371,24 375,24 L395,24 Q399,24 399,28 L399,224 Z" fill="#04B4A2" style="cursor:pointer" onmouseenter="showDetailTip(event,'Week of Jun 13 (this week)','518 guests','↑ 10.9% vs. 3-wk avg')" onmouseleave="hideDetailTip()"/>
+          <path d="M371,224 L371,28 Q371,24 375,24 L395,24 Q399,24 399,28 L399,224 Z" fill="#04B4A2" style="cursor:pointer" onmouseenter="showDetailTip(event,'Week of Jun 13 (last week)','518 guests','↑ 10.9% vs. 3-wk avg')" onmouseleave="hideDetailTip()"/>
           <!-- 3-wk avg flat line (default visible) -->
           <line class="detail-avg-line" x1="0" y1="99" x2="440" y2="99" stroke="#8896AB" stroke-width="1.5" stroke-dasharray="5 3"/>
           <!-- prior year per-bar segments (hidden until last-year selected) -->
@@ -2586,14 +2604,18 @@
           <span style="font-size:12px;color:#676D74;font-family:'Roboto',sans-serif;text-align:center;">Week of May 30</span>
           <span style="font-size:12px;color:#676D74;font-family:'Roboto',sans-serif;text-align:center;">Week of Jun 13</span>
         </div>
-        <div style="display:flex;justify-content:center;gap:32px;padding-top:6px;">
+        <div style="display:flex;justify-content:center;gap:24px;padding-top:16px;padding-bottom:12px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:8px;">
+            <div style="width:16px;height:16px;border-radius:4px;background:#04B4A2;flex-shrink:0;"></div>
+            <span style="font-size:13px;color:#676D74;font-family:'Roboto',sans-serif;">Last week</span>
+          </div>
           <div style="display:flex;align-items:center;gap:8px;">
             <svg width="24" height="10" viewBox="0 0 24 10" style="flex-shrink:0;"><line x1="0" y1="5" x2="24" y2="5" stroke="#8896AB" stroke-width="1.5" stroke-dasharray="3 2"/></svg>
             <span id="legend-positive-time" style="font-size:13px;color:#676D74;font-family:'Roboto',sans-serif;">3-wk avg</span>
           </div>
         </div>
       </div>
-      <div style="display:flex;flex-direction:column;justify-content:space-between;flex-shrink:0;padding-bottom:28px;text-align:left;">
+      <div style="display:flex;flex-direction:column;justify-content:space-between;flex-shrink:0;padding-bottom:74px;text-align:left;">
         <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;white-space:nowrap;">600</span>
         <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;white-space:nowrap;">450</span>
         <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;white-space:nowrap;">300</span>
@@ -2611,7 +2633,7 @@
               <div style="display:grid;grid-template-columns:1fr 110px 110px 130px;background:#F4F7FA;">
                 <div style="padding:12px 16px;font-size:14px;font-weight:600;letter-spacing:0.2px;color:#141623;font-family:'Roboto',sans-serif;">Party size</div>
                 <div style="padding:12px 16px;font-size:14px;font-weight:600;letter-spacing:0.2px;color:#141623;font-family:'Roboto',sans-serif;">3-wk avg</div>
-                <div style="padding:12px 16px;font-size:14px;font-weight:600;letter-spacing:0.2px;color:#141623;font-family:'Roboto',sans-serif;">This week</div>
+                <div style="padding:12px 16px;font-size:14px;font-weight:600;letter-spacing:0.2px;color:#141623;font-family:'Roboto',sans-serif;">Last week</div>
                 <div style="padding:12px 16px;font-size:14px;font-weight:600;letter-spacing:0.2px;color:#141623;font-family:'Roboto',sans-serif;text-align:right;">Difference</div>
               </div>
               <div style="display:grid;grid-template-columns:1fr 110px 110px 130px;border-top:1px solid #E2E9F3;align-items:center;">
@@ -2755,12 +2777,12 @@
       </div>
       <div style="background:#E5E9F1;border-radius:96px;padding:4px;display:flex;gap:4px;flex-shrink:0;">
         <button id="toggle-negative-time" onclick="setChartView('negative','time')" style="border:1px solid #085AEC;cursor:pointer;padding:4px 12px;border-radius:96px;font-family:'Roboto',sans-serif;font-size:14px;font-weight:600;line-height:20px;letter-spacing:0.2px;color:#0044C5;background:#B5D7FF;">Over time</button>
-        <button id="toggle-negative-cat" onclick="setChartView('negative','cat')" style="border:none;cursor:pointer;padding:4px 12px;border-radius:96px;font-family:'Roboto',sans-serif;font-size:14px;font-weight:600;line-height:20px;letter-spacing:0.2px;color:#141623;background:transparent;">By metric</button>
+        <button id="toggle-negative-cat" onclick="setChartView('negative','cat')" style="border:none;cursor:pointer;padding:4px 12px;border-radius:96px;font-family:'Roboto',sans-serif;font-size:14px;font-weight:600;line-height:20px;letter-spacing:0.2px;color:#141623;background:transparent;">By party size</button>
       </div>
     </div>
             <div id="chart-negative-time"><div style="padding:4px 0 12px;">
               <div style="display:flex;align-items:stretch;gap:4px;">
-                <div style="display:flex;flex-direction:column;justify-content:space-between;flex-shrink:0;padding-bottom:28px;text-align:right;">
+                <div style="display:flex;flex-direction:column;justify-content:space-between;flex-shrink:0;padding-bottom:74px;text-align:right;">
                   <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;white-space:nowrap;">550</span>
                   <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;white-space:nowrap;">413</span>
                   <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;white-space:nowrap;">275</span>
@@ -2770,10 +2792,10 @@
                 <div style="flex:1;min-width:0;display:flex;flex-direction:column;">
                   <svg width="100%" height="210" viewBox="0 0 500 228" preserveAspectRatio="none" style="display:block;">
                     <!-- Grid lines -->
-                    <line x1="0" y1="10"  x2="500" y2="10"  stroke="#E2E9F3" stroke-width="1"/>
-                    <line x1="0" y1="66"  x2="500" y2="66"  stroke="#E2E9F3" stroke-width="1"/>
+                    <line x1="0" y1="20"  x2="500" y2="20"  stroke="#E2E9F3" stroke-width="1"/>
+                    <line x1="0" y1="71"  x2="500" y2="71"  stroke="#E2E9F3" stroke-width="1"/>
                     <line x1="0" y1="122" x2="500" y2="122" stroke="#E2E9F3" stroke-width="1"/>
-                    <line x1="0" y1="178" x2="500" y2="178" stroke="#E2E9F3" stroke-width="1"/>
+                    <line x1="0" y1="173" x2="500" y2="173" stroke="#E2E9F3" stroke-width="1"/>
                     <line x1="0" y1="224" x2="500" y2="224" stroke="#E2E9F3" stroke-width="1"/>
                     <!-- May 30: Fri=380 guests, Sat=232 guests -->
                     <path d="M56,224 L56,73 Q56,69 60,69 L74,69 Q78,69 78,73 L78,224 Z" fill="#D4DDFF" style="cursor:pointer" onmouseenter="showDetailTip(event,'Friday, May 30','380 guests',null)" onmouseleave="hideDetailTip()"/>
@@ -2785,8 +2807,7 @@
                     <path d="M390,224 L390,17 Q390,13 394,13 L408,13 Q412,13 412,17 L412,224 Z" fill="#D4DDFF" style="cursor:pointer" onmouseenter="showDetailTip(event,'Friday, Jun 13','518 guests','↑ 29.5% vs. 3-wk avg')" onmouseleave="hideDetailTip()"/>
                     <path d="M422,224 L422,101 Q422,97 426,97 L440,97 Q444,97 444,101 L444,224 Z" fill="#EC863A" style="cursor:pointer" onmouseenter="showDetailTip(event,'Saturday, Jun 13','312 guests','↑ 27.3% vs. 3-wk avg')" onmouseleave="hideDetailTip()"/>
                     <!-- 3-wk avg flat lines (default visible): Fri avg=391 → y=72, Sat avg=241 → y=130 -->
-                    <line class="detail-avg-line" x1="0" y1="72" x2="500" y2="72" stroke="#8896AB" stroke-width="1.5" stroke-dasharray="5 3" opacity="0.5"/>
-                    <line class="detail-avg-line" x1="0" y1="130" x2="500" y2="130" stroke="#EC863A" stroke-width="1.5" stroke-dasharray="5 3" opacity="0.7"/>
+                    <line class="detail-avg-line" x1="0" y1="100" x2="500" y2="100" stroke="#8896AB" stroke-width="1.5" stroke-dasharray="5 3" opacity="0.7"/>
                     <!-- prior year per-bar segments (hidden until last-year selected) -->
                     <g class="detail-per-bar" style="display:none;">
                       <line x1="56" y1="82" x2="78" y2="82" stroke="#8896AB" stroke-width="1.5" stroke-dasharray="3 2"/>
@@ -2802,7 +2823,7 @@
                     <span style="font-size:12px;color:#676D74;font-family:'Roboto',sans-serif;text-align:center;">Week of Jun 6</span>
                     <span style="font-size:12px;color:#676D74;font-family:'Roboto',sans-serif;text-align:center;">Week of Jun 13</span>
                   </div>
-                  <div style="display:flex;justify-content:center;gap:24px;padding-top:12px;flex-wrap:wrap;">
+                  <div style="display:flex;justify-content:center;gap:24px;padding-top:16px;padding-bottom:12px;flex-wrap:wrap;">
                     <div style="display:flex;align-items:center;gap:10px;">
                       <div style="width:16px;height:16px;border-radius:4px;background:#D4DDFF;flex-shrink:0;"></div>
                       <span style="font-size:13px;color:#676D74;font-family:'Roboto',sans-serif;">Friday dinner</span>
@@ -2817,7 +2838,7 @@
                     </div>
                   </div>
                 </div>
-                <div style="display:flex;flex-direction:column;justify-content:space-between;flex-shrink:0;padding-bottom:28px;text-align:left;">
+                <div style="display:flex;flex-direction:column;justify-content:space-between;flex-shrink:0;padding-bottom:74px;text-align:left;">
                   <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;white-space:nowrap;">550</span>
                   <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;white-space:nowrap;">413</span>
                   <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;white-space:nowrap;">275</span>
@@ -2829,35 +2850,55 @@
 <div id="chart-negative-cat" style="display:none;">
   <div style="padding:4px 0 12px;">
     <div style="display:flex;align-items:stretch;gap:4px;">
-      <div style="display:flex;flex-direction:column;justify-content:space-between;flex-shrink:0;padding-bottom:28px;text-align:right;">
+      <div style="display:flex;flex-direction:column;justify-content:space-between;flex-shrink:0;padding-bottom:74px;text-align:right;">
+        <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;white-space:nowrap;">$80</span>
         <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;white-space:nowrap;">$60</span>
-        <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;white-space:nowrap;">$45</span>
-        <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;white-space:nowrap;">$30</span>
-        <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;white-space:nowrap;">$15</span>
+        <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;white-space:nowrap;">$40</span>
+        <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;white-space:nowrap;">$20</span>
         <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;white-space:nowrap;">$0</span>
       </div>
       <div style="flex:1;min-width:0;display:flex;flex-direction:column;">
-        <svg width="100%" height="210" viewBox="0 0 300 228" preserveAspectRatio="none" style="display:block;">
-          <line x1="0" y1="20" x2="300" y2="20" stroke="#E2E9F3" stroke-width="1"/>
-          <line x1="0" y1="75" x2="300" y2="75" stroke="#E2E9F3" stroke-width="1"/>
-          <line x1="0" y1="130" x2="300" y2="130" stroke="#E2E9F3" stroke-width="1"/>
-          <line x1="0" y1="185" x2="300" y2="185" stroke="#E2E9F3" stroke-width="1"/>
-          <line x1="0" y1="224" x2="300" y2="224" stroke="#E2E9F3" stroke-width="1"/>
-          <path d="M43,224 L43,45 Q43,41 47,41 L83,41 Q87,41 87,45 L87,224 Z" fill="#D4DDFF" style="cursor:pointer" onmouseenter="showDetailTip(event,'Fri avg check (3-wk avg)','$46.40',null)" onmouseleave="hideDetailTip()"/>
-          <path d="M93,224 L93,45 Q93,41 97,41 L133,41 Q137,41 137,45 L137,224 Z" fill="#04B4A2" style="cursor:pointer" onmouseenter="showDetailTip(event,'Fri avg check (this week)','$46.86','↑ 1.0% vs. 3-wk avg')" onmouseleave="hideDetailTip()"/>
-          <path d="M163,224 L163,81 Q163,77 167,77 L203,77 Q207,77 207,81 L207,224 Z" fill="#D4DDFF" style="cursor:pointer" onmouseenter="showDetailTip(event,'Sat avg check (3-wk avg)','$41.90',null)" onmouseleave="hideDetailTip()"/>
-          <path d="M213,224 L213,84 Q213,80 217,80 L253,80 Q257,80 257,84 L257,224 Z" fill="#EC863A" style="cursor:pointer" onmouseenter="showDetailTip(event,'Sat avg check (this week)','$42.30','↑ 1.0% vs. 3-wk avg')" onmouseleave="hideDetailTip()"/>
+        <svg width="100%" height="210" viewBox="0 0 440 228" preserveAspectRatio="none" style="display:block;">
+          <line x1="0" y1="20" x2="440" y2="20" stroke="#E2E9F3" stroke-width="1"/>
+          <line x1="0" y1="71" x2="440" y2="71" stroke="#E2E9F3" stroke-width="1"/>
+          <line x1="0" y1="122" x2="440" y2="122" stroke="#E2E9F3" stroke-width="1"/>
+          <line x1="0" y1="173" x2="440" y2="173" stroke="#E2E9F3" stroke-width="1"/>
+          <line x1="0" y1="224" x2="440" y2="224" stroke="#E2E9F3" stroke-width="1"/>
+          <!-- 1–2 guests: avg then last-week -->
+          <path d="M33,224 L33,142 Q33,138 37,138 L47,138 Q51,138 51,142 L51,224 Z" fill="#D4DDFF" style="cursor:pointer" onmouseenter="showDetailTip(event,'1–2 guests (3-wk avg)','$32.00',null)" onmouseleave="hideDetailTip()"/>
+          <path d="M59,224 L59,135 Q59,131 63,131 L73,131 Q77,131 77,135 L77,224 Z" fill="#EC863A" style="cursor:pointer" onmouseenter="showDetailTip(event,'1–2 guests (last week)','$35.00','↑ 9.4% vs. 3-wk avg')" onmouseleave="hideDetailTip()"/>
+          <!-- 3–4 guests -->
+          <path d="M143,224 L143,112 Q143,108 147,108 L157,108 Q161,108 161,112 L161,224 Z" fill="#D4DDFF" style="cursor:pointer" onmouseenter="showDetailTip(event,'3–4 guests (3-wk avg)','$44.00',null)" onmouseleave="hideDetailTip()"/>
+          <path d="M169,224 L169,107 Q169,103 173,103 L183,103 Q187,103 187,107 L187,224 Z" fill="#EC863A" style="cursor:pointer" onmouseenter="showDetailTip(event,'3–4 guests (last week)','$46.00','↑ 4.5% vs. 3-wk avg')" onmouseleave="hideDetailTip()"/>
+          <!-- 5–6 guests -->
+          <path d="M253,224 L253,91 Q253,87 257,87 L267,87 Q271,87 271,91 L271,224 Z" fill="#D4DDFF" style="cursor:pointer" onmouseenter="showDetailTip(event,'5–6 guests (3-wk avg)','$52.00',null)" onmouseleave="hideDetailTip()"/>
+          <path d="M279,224 L279,81 Q279,77 283,77 L293,77 Q297,77 297,81 L297,224 Z" fill="#EC863A" style="cursor:pointer" onmouseenter="showDetailTip(event,'5–6 guests (last week)','$56.00','↑ 7.7% vs. 3-wk avg')" onmouseleave="hideDetailTip()"/>
+          <!-- 7+ guests -->
+          <path d="M363,224 L363,76 Q363,72 367,72 L377,72 Q381,72 381,76 L381,224 Z" fill="#D4DDFF" style="cursor:pointer" onmouseenter="showDetailTip(event,'7+ guests (3-wk avg)','$58.00',null)" onmouseleave="hideDetailTip()"/>
+          <path d="M389,224 L389,61 Q389,57 393,57 L403,57 Q407,57 407,61 L407,224 Z" fill="#EC863A" style="cursor:pointer" onmouseenter="showDetailTip(event,'7+ guests (last week)','$64.00','↑ 10.3% vs. 3-wk avg')" onmouseleave="hideDetailTip()"/>
         </svg>
-        <div style="display:grid;grid-template-columns:repeat(2,1fr);padding-top:6px;padding-bottom:4px;">
-          <span style="font-size:12px;color:#676D74;font-family:'Roboto',sans-serif;text-align:center;">Friday avg check</span>
-          <span style="font-size:12px;color:#676D74;font-family:'Roboto',sans-serif;text-align:center;">Saturday avg check</span>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);padding-top:6px;padding-bottom:4px;">
+          <span style="font-size:12px;color:#676D74;font-family:'Roboto',sans-serif;text-align:center;">1–2 guests</span>
+          <span style="font-size:12px;color:#676D74;font-family:'Roboto',sans-serif;text-align:center;">3–4 guests</span>
+          <span style="font-size:12px;color:#676D74;font-family:'Roboto',sans-serif;text-align:center;">5–6 guests</span>
+          <span style="font-size:12px;color:#676D74;font-family:'Roboto',sans-serif;text-align:center;">7+ guests</span>
+        </div>
+        <div style="display:flex;justify-content:center;gap:24px;padding-top:16px;padding-bottom:12px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:8px;">
+            <div style="width:16px;height:16px;border-radius:4px;background:#D4DDFF;flex-shrink:0;"></div>
+            <span style="font-size:13px;color:#676D74;font-family:'Roboto',sans-serif;">3-wk avg</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;">
+            <div style="width:16px;height:16px;border-radius:4px;background:#EC863A;flex-shrink:0;"></div>
+            <span style="font-size:13px;color:#676D74;font-family:'Roboto',sans-serif;">Last week</span>
+          </div>
         </div>
       </div>
-      <div style="display:flex;flex-direction:column;justify-content:space-between;flex-shrink:0;padding-bottom:28px;text-align:left;">
+      <div style="display:flex;flex-direction:column;justify-content:space-between;flex-shrink:0;padding-bottom:74px;text-align:left;">
+        <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;white-space:nowrap;">$80</span>
         <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;white-space:nowrap;">$60</span>
-        <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;white-space:nowrap;">$45</span>
-        <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;white-space:nowrap;">$30</span>
-        <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;white-space:nowrap;">$15</span>
+        <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;white-space:nowrap;">$40</span>
+        <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;white-space:nowrap;">$20</span>
         <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;white-space:nowrap;">$0</span>
       </div>
     </div>
@@ -2885,28 +2926,34 @@
 <div id="table-negative-cat" style="display:none;margin-bottom:64px;">
   <div style="border-radius:12px;overflow:hidden;">
     <div style="display:grid;grid-template-columns:1fr 110px 110px 130px;background:#F4F7FA;">
-      <div style="padding:12px 16px;font-size:14px;font-weight:600;letter-spacing:0.2px;color:#141623;font-family:'Roboto',sans-serif;">Metric</div>
+      <div style="padding:12px 16px;font-size:14px;font-weight:600;letter-spacing:0.2px;color:#141623;font-family:'Roboto',sans-serif;">Party size</div>
       <div style="padding:12px 16px;font-size:14px;font-weight:600;letter-spacing:0.2px;color:#141623;font-family:'Roboto',sans-serif;">3-wk avg</div>
-      <div style="padding:12px 16px;font-size:14px;font-weight:600;letter-spacing:0.2px;color:#141623;font-family:'Roboto',sans-serif;">This week</div>
+      <div style="padding:12px 16px;font-size:14px;font-weight:600;letter-spacing:0.2px;color:#141623;font-family:'Roboto',sans-serif;">Last week</div>
       <div style="padding:12px 16px;font-size:14px;font-weight:600;letter-spacing:0.2px;color:#141623;font-family:'Roboto',sans-serif;text-align:right;">Difference</div>
     </div>
     <div style="display:grid;grid-template-columns:1fr 110px 110px 130px;border-top:1px solid #E2E9F3;align-items:center;">
-      <div style="padding:12px 16px;font-size:16px;color:#141623;font-family:'Roboto',sans-serif;">Fri avg check</div>
-      <div style="padding:12px 16px;font-size:16px;color:#141623;font-family:'Roboto',sans-serif;">$46.40</div>
-      <div style="padding:12px 16px;font-size:16px;color:#141623;font-family:'Roboto',sans-serif;">$46.86</div>
-      <div style="padding:12px 16px;text-align:right;"><span style="display:inline-flex;align-items:center;gap:4px;background:#E6F4EC;border-radius:50px;padding:2px 10px;font-size:14px;font-weight:600;color:#006A5E;font-family:'Roboto',sans-serif;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M12 19V5M5 12L12 5L19 12" stroke="#006A5E" stroke-width="2.5" stroke-linecap="round"/></svg>+1.0%</span></div>
+      <div style="padding:12px 16px;font-size:16px;color:#141623;font-family:'Roboto',sans-serif;">1–2 guests</div>
+      <div style="padding:12px 16px;font-size:16px;color:#141623;font-family:'Roboto',sans-serif;">$32.00</div>
+      <div style="padding:12px 16px;font-size:16px;color:#141623;font-family:'Roboto',sans-serif;">$35.00</div>
+      <div style="padding:12px 16px;text-align:right;"><span style="display:inline-flex;align-items:center;gap:4px;background:#E6F4EC;border-radius:50px;padding:2px 10px;font-size:14px;font-weight:600;color:#006A5E;font-family:'Roboto',sans-serif;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M12 19V5M5 12L12 5L19 12" stroke="#006A5E" stroke-width="2.5" stroke-linecap="round"/></svg>+9.4%</span></div>
     </div>
     <div style="display:grid;grid-template-columns:1fr 110px 110px 130px;border-top:1px solid #E2E9F3;align-items:center;">
-      <div style="padding:12px 16px;font-size:16px;color:#141623;font-family:'Roboto',sans-serif;">Sat avg check</div>
-      <div style="padding:12px 16px;font-size:16px;color:#141623;font-family:'Roboto',sans-serif;">$41.90</div>
-      <div style="padding:12px 16px;font-size:16px;color:#141623;font-family:'Roboto',sans-serif;">$42.30</div>
-      <div style="padding:12px 16px;text-align:right;"><span style="display:inline-flex;align-items:center;gap:4px;background:#E6F4EC;border-radius:50px;padding:2px 10px;font-size:14px;font-weight:600;color:#006A5E;font-family:'Roboto',sans-serif;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M12 19V5M5 12L12 5L19 12" stroke="#006A5E" stroke-width="2.5" stroke-linecap="round"/></svg>+1.0%</span></div>
+      <div style="padding:12px 16px;font-size:16px;color:#141623;font-family:'Roboto',sans-serif;">3–4 guests</div>
+      <div style="padding:12px 16px;font-size:16px;color:#141623;font-family:'Roboto',sans-serif;">$44.00</div>
+      <div style="padding:12px 16px;font-size:16px;color:#141623;font-family:'Roboto',sans-serif;">$46.00</div>
+      <div style="padding:12px 16px;text-align:right;"><span style="display:inline-flex;align-items:center;gap:4px;background:#E6F4EC;border-radius:50px;padding:2px 10px;font-size:14px;font-weight:600;color:#006A5E;font-family:'Roboto',sans-serif;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M12 19V5M5 12L12 5L19 12" stroke="#006A5E" stroke-width="2.5" stroke-linecap="round"/></svg>+4.5%</span></div>
     </div>
     <div style="display:grid;grid-template-columns:1fr 110px 110px 130px;border-top:1px solid #E2E9F3;align-items:center;">
-      <div style="padding:12px 16px;font-size:16px;color:#141623;font-family:'Roboto',sans-serif;">Fri–Sat gap</div>
-      <div style="padding:12px 16px;font-size:16px;color:#141623;font-family:'Roboto',sans-serif;">$4.50</div>
-      <div style="padding:12px 16px;font-size:16px;color:#141623;font-family:'Roboto',sans-serif;">$4.56</div>
-      <div style="padding:12px 16px;text-align:right;"><span style="display:inline-flex;align-items:center;gap:4px;background:#FFF4EC;border-radius:50px;padding:2px 10px;font-size:14px;font-weight:600;color:#AF5701;font-family:'Roboto',sans-serif;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12l7 7 7-7" stroke="#AF5701" stroke-width="2.5" stroke-linecap="round"/></svg>+$0.06</span></div>
+      <div style="padding:12px 16px;font-size:16px;color:#141623;font-family:'Roboto',sans-serif;">5–6 guests</div>
+      <div style="padding:12px 16px;font-size:16px;color:#141623;font-family:'Roboto',sans-serif;">$52.00</div>
+      <div style="padding:12px 16px;font-size:16px;color:#141623;font-family:'Roboto',sans-serif;">$56.00</div>
+      <div style="padding:12px 16px;text-align:right;"><span style="display:inline-flex;align-items:center;gap:4px;background:#E6F4EC;border-radius:50px;padding:2px 10px;font-size:14px;font-weight:600;color:#006A5E;font-family:'Roboto',sans-serif;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M12 19V5M5 12L12 5L19 12" stroke="#006A5E" stroke-width="2.5" stroke-linecap="round"/></svg>+7.7%</span></div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 110px 110px 130px;border-top:1px solid #E2E9F3;align-items:center;">
+      <div style="padding:12px 16px;font-size:16px;color:#141623;font-family:'Roboto',sans-serif;">7+ guests</div>
+      <div style="padding:12px 16px;font-size:16px;color:#141623;font-family:'Roboto',sans-serif;">$58.00</div>
+      <div style="padding:12px 16px;font-size:16px;color:#141623;font-family:'Roboto',sans-serif;">$64.00</div>
+      <div style="padding:12px 16px;text-align:right;"><span style="display:inline-flex;align-items:center;gap:4px;background:#E6F4EC;border-radius:50px;padding:2px 10px;font-size:14px;font-weight:600;color:#006A5E;font-family:'Roboto',sans-serif;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M12 19V5M5 12L12 5L19 12" stroke="#006A5E" stroke-width="2.5" stroke-linecap="round"/></svg>+10.3%</span></div>
     </div>
   </div>
 </div>
@@ -3021,22 +3068,22 @@
                     <line x1="0" y1="228" x2="560" y2="228" stroke="#E2E9F3" stroke-width="1"/>
                     <!-- Mon: 3-wk 29.8% | this 32.1% -->
                     <path d="M23,228 L23,70 Q23,66 27,66 L39,66 Q43,66 43,70 L43,228 Z" fill="#D4DDFF" style="cursor:pointer" onmouseenter="showDetailTip(event,'Monday · 3-wk avg','29.8%',null)" onmouseleave="hideDetailTip()"/>
-                    <path d="M51,228 L51,57 Q51,53 55,53 L67,53 Q71,53 71,57 L71,228 Z" fill="#EC863A" style="cursor:pointer" onmouseenter="showDetailTip(event,'Monday · This week','32.1%','↑ Above 30% threshold')" onmouseleave="hideDetailTip()"/>
+                    <path d="M51,228 L51,57 Q51,53 55,53 L67,53 Q71,53 71,57 L71,228 Z" fill="#EC863A" style="cursor:pointer" onmouseenter="showDetailTip(event,'Monday · Last week','32.1%','↑ Above 30% threshold')" onmouseleave="hideDetailTip()"/>
                     <!-- Tue: 3-wk 31.2% | this 33.8% -->
                     <path d="M116,228 L116,62 Q116,58 120,58 L132,58 Q136,58 136,62 L136,228 Z" fill="#D4DDFF" style="cursor:pointer" onmouseenter="showDetailTip(event,'Tuesday · 3-wk avg','31.2%',null)" onmouseleave="hideDetailTip()"/>
-                    <path d="M144,228 L144,48 Q144,44 148,44 L160,44 Q164,44 164,48 L164,228 Z" fill="#EC863A" style="cursor:pointer" onmouseenter="showDetailTip(event,'Tuesday · This week','33.8%','↑ Above 30% threshold')" onmouseleave="hideDetailTip()"/>
+                    <path d="M144,228 L144,48 Q144,44 148,44 L160,44 Q164,44 164,48 L164,228 Z" fill="#EC863A" style="cursor:pointer" onmouseenter="showDetailTip(event,'Tuesday · Last week','33.8%','↑ Above 30% threshold')" onmouseleave="hideDetailTip()"/>
                     <!-- Wed: 3-wk 27.1% | this 28.4% -->
                     <path d="M209,228 L209,84 Q209,80 213,80 L225,80 Q229,80 229,84 L229,228 Z" fill="#D4DDFF" style="cursor:pointer" onmouseenter="showDetailTip(event,'Wednesday · 3-wk avg','27.1%',null)" onmouseleave="hideDetailTip()"/>
-                    <path d="M237,228 L237,77 Q237,73 241,73 L253,73 Q257,73 257,77 L257,228 Z" fill="#EC863A" style="cursor:pointer" onmouseenter="showDetailTip(event,'Wednesday · This week','28.4%',null)" onmouseleave="hideDetailTip()"/>
+                    <path d="M237,228 L237,77 Q237,73 241,73 L253,73 Q257,73 257,77 L257,228 Z" fill="#EC863A" style="cursor:pointer" onmouseenter="showDetailTip(event,'Wednesday · Last week','28.4%',null)" onmouseleave="hideDetailTip()"/>
                     <!-- Thu: 3-wk 29.0% | this 31.2% -->
                     <path d="M303,228 L303,74 Q303,70 307,70 L319,70 Q323,70 323,74 L323,228 Z" fill="#D4DDFF" style="cursor:pointer" onmouseenter="showDetailTip(event,'Thursday · 3-wk avg','29.0%',null)" onmouseleave="hideDetailTip()"/>
-                    <path d="M331,228 L331,62 Q331,58 335,58 L347,58 Q351,58 351,62 L351,228 Z" fill="#EC863A" style="cursor:pointer" onmouseenter="showDetailTip(event,'Thursday · This week','31.2%','↑ Above 30% threshold')" onmouseleave="hideDetailTip()"/>
+                    <path d="M331,228 L331,62 Q331,58 335,58 L347,58 Q351,58 351,62 L351,228 Z" fill="#EC863A" style="cursor:pointer" onmouseenter="showDetailTip(event,'Thursday · Last week','31.2%','↑ Above 30% threshold')" onmouseleave="hideDetailTip()"/>
                     <!-- Fri: 3-wk 31.8% | this 34.5% -->
                     <path d="M396,228 L396,59 Q396,55 400,55 L412,55 Q416,55 416,59 L416,228 Z" fill="#D4DDFF" style="cursor:pointer" onmouseenter="showDetailTip(event,'Friday · 3-wk avg','31.8%',null)" onmouseleave="hideDetailTip()"/>
-                    <path d="M424,228 L424,44 Q424,40 428,40 L440,40 Q444,40 444,44 L444,228 Z" fill="#EC863A" style="cursor:pointer" onmouseenter="showDetailTip(event,'Friday · This week','34.5%','↑ Above 30% threshold')" onmouseleave="hideDetailTip()"/>
+                    <path d="M424,228 L424,44 Q424,40 428,40 L440,40 Q444,40 444,44 L444,228 Z" fill="#EC863A" style="cursor:pointer" onmouseenter="showDetailTip(event,'Friday · Last week','34.5%','↑ Above 30% threshold')" onmouseleave="hideDetailTip()"/>
                     <!-- Sat: 3-wk 27.8% | this 29.1% -->
                     <path d="M489,228 L489,80 Q489,76 493,76 L505,76 Q509,76 509,80 L509,228 Z" fill="#D4DDFF" style="cursor:pointer" onmouseenter="showDetailTip(event,'Saturday · 3-wk avg','27.8%',null)" onmouseleave="hideDetailTip()"/>
-                    <path d="M517,228 L517,73 Q517,69 521,69 L533,69 Q537,69 537,73 L537,228 Z" fill="#EC863A" style="cursor:pointer" onmouseenter="showDetailTip(event,'Saturday · This week','29.1%',null)" onmouseleave="hideDetailTip()"/>
+                    <path d="M517,228 L517,73 Q517,69 521,69 L533,69 Q537,69 537,73 L537,228 Z" fill="#EC863A" style="cursor:pointer" onmouseenter="showDetailTip(event,'Saturday · Last week','29.1%',null)" onmouseleave="hideDetailTip()"/>
                     <!-- 30% threshold line — drawn last so it appears in front of bars -->
                     <line x1="0" y1="65"  x2="560" y2="65"  stroke="#8896AB" stroke-width="1.5" stroke-dasharray="5 3"/>
                   </svg>
@@ -3064,7 +3111,7 @@
                 </div>
                 <div style="display:flex;align-items:center;gap:8px;">
                   <div style="width:16px;height:16px;border-radius:4px;background:#EC863A;flex-shrink:0;"></div>
-                  <span style="font-size:13px;color:#676D74;font-family:'Roboto',sans-serif;">This week</span>
+                  <span style="font-size:13px;color:#676D74;font-family:'Roboto',sans-serif;">Last week</span>
                 </div>
                 <div style="display:flex;align-items:center;gap:8px;">
                   <svg width="24" height="10" viewBox="0 0 24 10" style="flex-shrink:0;"><line x1="0" y1="5" x2="24" y2="5" stroke="#8896AB" stroke-width="1.5" stroke-dasharray="4 2.5"/></svg>
@@ -3075,7 +3122,7 @@
 <div id="chart-labor-time">
   <div style="padding:4px 0 16px;margin-bottom:0;">
     <div style="display:flex;align-items:stretch;gap:4px;">
-      <div style="display:flex;flex-direction:column;justify-content:space-between;flex-shrink:0;padding-bottom:28px;text-align:right;">
+      <div style="display:flex;flex-direction:column;justify-content:space-between;flex-shrink:0;padding-bottom:74px;text-align:right;">
         <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;white-space:nowrap;">35%</span>
         <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;white-space:nowrap;">30%</span>
         <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;white-space:nowrap;">25%</span>
@@ -3085,14 +3132,14 @@
       <div style="flex:1;min-width:0;display:flex;flex-direction:column;">
         <svg width="100%" height="210" viewBox="0 0 440 228" preserveAspectRatio="none" style="display:block;">
           <line x1="0" y1="20" x2="440" y2="20" stroke="#E2E9F3" stroke-width="1"/>
-          <line x1="0" y1="75" x2="440" y2="75" stroke="#E2E9F3" stroke-width="1"/>
-          <line x1="0" y1="130" x2="440" y2="130" stroke="#E2E9F3" stroke-width="1"/>
-          <line x1="0" y1="185" x2="440" y2="185" stroke="#E2E9F3" stroke-width="1"/>
+          <line x1="0" y1="71" x2="440" y2="71" stroke="#E2E9F3" stroke-width="1"/>
+          <line x1="0" y1="122" x2="440" y2="122" stroke="#E2E9F3" stroke-width="1"/>
+          <line x1="0" y1="173" x2="440" y2="173" stroke="#E2E9F3" stroke-width="1"/>
           <line x1="0" y1="224" x2="440" y2="224" stroke="#E2E9F3" stroke-width="1"/>
-          <path d="M41,224 L41,88 Q41,84 45,84 L65,84 Q69,84 69,88 L69,224 Z" fill="#D4DDFF" style="cursor:pointer" onmouseenter="showDetailTip(event,'3 weeks ago','28.4% avg labor',null)" onmouseleave="hideDetailTip()"/>
-          <path d="M151,224 L151,75 Q151,71 155,71 L175,71 Q179,71 179,75 L179,224 Z" fill="#D4DDFF" style="cursor:pointer" onmouseenter="showDetailTip(event,'2 weeks ago','29.1% avg labor',null)" onmouseleave="hideDetailTip()"/>
-          <path d="M261,224 L261,64 Q261,60 265,60 L285,60 Q289,60 289,64 L289,224 Z" fill="#D4DDFF" style="cursor:pointer" onmouseenter="showDetailTip(event,'Last week','30.2% avg labor',null)" onmouseleave="hideDetailTip()"/>
-          <path d="M371,224 L371,48 Q371,44 375,44 L395,44 Q399,44 399,48 L399,224 Z" fill="#EC863A" style="cursor:pointer" onmouseenter="showDetailTip(event,'This week','31.5% avg labor','↑ Above 30% threshold')" onmouseleave="hideDetailTip()"/>
+          <path d="M41,224 L41,88 Q41,84 45,84 L65,84 Q69,84 69,88 L69,224 Z" fill="#D4DDFF" style="cursor:pointer" onmouseenter="showDetailTip(event,'May 23','28.4% avg labor',null)" onmouseleave="hideDetailTip()"/>
+          <path d="M151,224 L151,75 Q151,71 155,71 L175,71 Q179,71 179,75 L179,224 Z" fill="#D4DDFF" style="cursor:pointer" onmouseenter="showDetailTip(event,'May 30','29.1% avg labor',null)" onmouseleave="hideDetailTip()"/>
+          <path d="M261,224 L261,64 Q261,60 265,60 L285,60 Q289,60 289,64 L289,224 Z" fill="#D4DDFF" style="cursor:pointer" onmouseenter="showDetailTip(event,'Jun 6','30.2% avg labor',null)" onmouseleave="hideDetailTip()"/>
+          <path d="M371,224 L371,48 Q371,44 375,44 L395,44 Q399,44 399,48 L399,224 Z" fill="#EC863A" style="cursor:pointer" onmouseenter="showDetailTip(event,'Jun 13','31.5% avg labor','↑ Above 30% threshold')" onmouseleave="hideDetailTip()"/>
           <!-- 30% threshold -->
           <line x1="0" y1="75" x2="440" y2="75" stroke="#8896AB" stroke-width="1.5" stroke-dasharray="5 3"/>
           <!-- 3-wk avg flat line (default visible, avg of prior 3 weeks ≈ 29.2% → y=74) -->
@@ -3106,15 +3153,15 @@
           </g>
         </svg>
         <div style="display:grid;grid-template-columns:repeat(4,1fr);padding-top:6px;padding-bottom:4px;">
-          <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;text-align:center;">3 wks ago</span>
-          <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;text-align:center;">2 wks ago</span>
-          <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;text-align:center;">Last week</span>
-          <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;text-align:center;">This week</span>
+          <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;text-align:center;">May 23</span>
+          <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;text-align:center;">May 30</span>
+          <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;text-align:center;">Jun 6</span>
+          <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;text-align:center;">Jun 13</span>
         </div>
-        <div style="display:flex;justify-content:center;gap:24px;padding-top:6px;flex-wrap:wrap;">
+        <div style="display:flex;justify-content:center;gap:24px;padding-top:16px;padding-bottom:12px;flex-wrap:wrap;">
           <div style="display:flex;align-items:center;gap:8px;">
-            <svg width="24" height="10" viewBox="0 0 24 10" style="flex-shrink:0;"><line x1="0" y1="5" x2="24" y2="5" stroke="#8896AB" stroke-width="1.5" stroke-dasharray="5 3"/></svg>
-            <span style="font-size:13px;color:#676D74;font-family:'Roboto',sans-serif;">30% threshold</span>
+            <div style="width:16px;height:16px;border-radius:4px;background:#EC863A;flex-shrink:0;"></div>
+            <span style="font-size:13px;color:#676D74;font-family:'Roboto',sans-serif;">Last week</span>
           </div>
           <div style="display:flex;align-items:center;gap:8px;">
             <svg width="24" height="10" viewBox="0 0 24 10" style="flex-shrink:0;"><line x1="0" y1="5" x2="24" y2="5" stroke="#8896AB" stroke-width="1.5" stroke-dasharray="3 2"/></svg>
@@ -3122,7 +3169,7 @@
           </div>
         </div>
       </div>
-      <div style="display:flex;flex-direction:column;justify-content:space-between;flex-shrink:0;padding-bottom:28px;text-align:left;">
+      <div style="display:flex;flex-direction:column;justify-content:space-between;flex-shrink:0;padding-bottom:74px;text-align:left;">
         <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;white-space:nowrap;">35%</span>
         <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;white-space:nowrap;">30%</span>
         <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;white-space:nowrap;">25%</span>
@@ -3140,7 +3187,7 @@
               <div style="display:grid;grid-template-columns:1fr 110px 110px 130px;background:#F4F7FA;">
                 <div style="padding:12px 16px;font-size:14px;font-weight:600;letter-spacing:0.2px;color:#141623;font-family:'Roboto',sans-serif;">Day</div>
                 <div style="padding:12px 16px;font-size:14px;font-weight:600;letter-spacing:0.2px;color:#141623;font-family:'Roboto',sans-serif;">3-wk avg</div>
-                <div style="padding:12px 16px;font-size:14px;font-weight:600;letter-spacing:0.2px;color:#141623;font-family:'Roboto',sans-serif;">This week</div>
+                <div style="padding:12px 16px;font-size:14px;font-weight:600;letter-spacing:0.2px;color:#141623;font-family:'Roboto',sans-serif;">Last week</div>
                 <div style="padding:12px 16px;font-size:14px;font-weight:600;letter-spacing:0.2px;color:#141623;font-family:'Roboto',sans-serif;text-align:right;">Difference</div>
               </div>
               <div style="display:grid;grid-template-columns:1fr 110px 110px 130px;border-top:1px solid #E2E9F3;align-items:center;">
@@ -3295,7 +3342,7 @@
     </div>
             <div id="chart-sunday-time"><div style="padding:4px 0 12px;">
               <div style="display:flex;align-items:stretch;gap:4px;">
-                <div style="display:flex;flex-direction:column;justify-content:space-between;flex-shrink:0;padding-bottom:28px;text-align:right;">
+                <div style="display:flex;flex-direction:column;justify-content:space-between;flex-shrink:0;padding-bottom:74px;text-align:right;">
                   <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;white-space:nowrap;">$35K</span>
                   <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;white-space:nowrap;">$26K</span>
                   <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;white-space:nowrap;">$17K</span>
@@ -3312,7 +3359,7 @@
                     <line x1="0" y1="224" x2="380" y2="224" stroke="#E2E9F3" stroke-width="1"/>
                     <path d="M49,224 L49,44 Q49,40 53,40 L73,40 Q77,40 77,44 L77,224 Z" fill="#D4DDFF" style="cursor:pointer" onmouseenter="showDetailTip(event,'May 25','$31,668',null)" onmouseleave="hideDetailTip()"/>
                     <path d="M176,224 L176,42 Q176,38 180,38 L200,38 Q204,38 204,42 L204,224 Z" fill="#D4DDFF" style="cursor:pointer" onmouseenter="showDetailTip(event,'Jun 1','$31,925',null)" onmouseleave="hideDetailTip()"/>
-                    <path d="M303,224 L303,37 Q303,33 307,33 L327,33 Q331,33 331,37 L331,224 Z" fill="#04B4A2" style="cursor:pointer" onmouseenter="showDetailTip(event,'Jun 8 (this week)','$32,830','↑ 18% vs. 3-wk avg')" onmouseleave="hideDetailTip()"/>
+                    <path d="M303,224 L303,37 Q303,33 307,33 L327,33 Q331,33 331,37 L331,224 Z" fill="#04B4A2" style="cursor:pointer" onmouseenter="showDetailTip(event,'Jun 8 (last week)','$32,830','↑ 18% vs. 3-wk avg')" onmouseleave="hideDetailTip()"/>
                     <!-- 3-wk avg flat line (default visible, avg of prior 2 weeks ≈ $31,797 → y=39) -->
                     <line class="detail-avg-line" x1="0" y1="39" x2="380" y2="39" stroke="#8896AB" stroke-width="1.5" stroke-dasharray="5 3"/>
                     <!-- prior year per-bar segments (hidden until last-year selected) -->
@@ -3327,14 +3374,18 @@
                     <span style="font-size:12px;color:#676D74;font-family:'Roboto',sans-serif;text-align:center;">Week of Jun 1</span>
                     <span style="font-size:12px;color:#676D74;font-family:'Roboto',sans-serif;text-align:center;">Week of Jun 8</span>
                   </div>
-                  <div style="display:flex;justify-content:center;gap:32px;padding-top:6px;">
+                  <div style="display:flex;justify-content:center;gap:24px;padding-top:16px;padding-bottom:12px;flex-wrap:wrap;">
+                    <div style="display:flex;align-items:center;gap:8px;">
+                      <div style="width:16px;height:16px;border-radius:4px;background:#04B4A2;flex-shrink:0;"></div>
+                      <span style="font-size:13px;color:#676D74;font-family:'Roboto',sans-serif;">Last week</span>
+                    </div>
                     <div style="display:flex;align-items:center;gap:8px;">
                       <svg width="24" height="10" viewBox="0 0 24 10" style="flex-shrink:0;"><line x1="0" y1="5" x2="24" y2="5" stroke="#8896AB" stroke-width="1.5" stroke-dasharray="3 2"/></svg>
                       <span id="legend-sunday-time" style="font-size:13px;color:#676D74;font-family:'Roboto',sans-serif;">3-wk avg</span>
                     </div>
                   </div>
                 </div>
-                <div style="display:flex;flex-direction:column;justify-content:space-between;flex-shrink:0;padding-bottom:28px;text-align:left;">
+                <div style="display:flex;flex-direction:column;justify-content:space-between;flex-shrink:0;padding-bottom:74px;text-align:left;">
                   <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;white-space:nowrap;">$35K</span>
                   <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;white-space:nowrap;">$26K</span>
                   <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;white-space:nowrap;">$17K</span>
@@ -3356,16 +3407,16 @@
       <div style="flex:1;min-width:0;display:flex;flex-direction:column;">
         <svg width="100%" height="210" viewBox="0 0 440 228" preserveAspectRatio="none" style="display:block;">
           <line x1="0" y1="20" x2="440" y2="20" stroke="#E2E9F3" stroke-width="1"/>
-          <line x1="0" y1="75" x2="440" y2="75" stroke="#E2E9F3" stroke-width="1"/>
-          <line x1="0" y1="130" x2="440" y2="130" stroke="#E2E9F3" stroke-width="1"/>
-          <line x1="0" y1="185" x2="440" y2="185" stroke="#E2E9F3" stroke-width="1"/>
+          <line x1="0" y1="71" x2="440" y2="71" stroke="#E2E9F3" stroke-width="1"/>
+          <line x1="0" y1="122" x2="440" y2="122" stroke="#E2E9F3" stroke-width="1"/>
+          <line x1="0" y1="173" x2="440" y2="173" stroke="#E2E9F3" stroke-width="1"/>
           <line x1="0" y1="224" x2="440" y2="224" stroke="#E2E9F3" stroke-width="1"/>
           <path d="M20,224 L20,41 Q20,37 24,37 L60,37 Q64,37 64,41 L64,224 Z" fill="#D4DDFF" style="cursor:pointer" onmouseenter="showDetailTip(event,'1–4 guests (3-wk avg)','363 guests',null)" onmouseleave="hideDetailTip()"/>
-          <path d="M68,224 L68,28 Q68,24 72,24 L108,24 Q112,24 112,28 L112,224 Z" fill="#04B4A2" style="cursor:pointer" onmouseenter="showDetailTip(event,'1–4 guests (this week)','390 guests','↑ 7.4% vs. 3-wk avg')" onmouseleave="hideDetailTip()"/>
+          <path d="M68,224 L68,28 Q68,24 72,24 L108,24 Q112,24 112,28 L112,224 Z" fill="#04B4A2" style="cursor:pointer" onmouseenter="showDetailTip(event,'1–4 guests (last week)','390 guests','↑ 7.4% vs. 3-wk avg')" onmouseleave="hideDetailTip()"/>
           <path d="M173,224 L173,136 Q173,132 177,132 L213,132 Q217,132 217,136 L217,224 Z" fill="#D4DDFF" style="cursor:pointer" onmouseenter="showDetailTip(event,'5–6 guests (3-wk avg)','178 guests',null)" onmouseleave="hideDetailTip()"/>
-          <path d="M221,224 L221,128 Q221,124 225,124 L261,124 Q265,124 265,128 L265,224 Z" fill="#04B4A2" style="cursor:pointer" onmouseenter="showDetailTip(event,'5–6 guests (this week)','189 guests','↑ 6.2% vs. 3-wk avg')" onmouseleave="hideDetailTip()"/>
+          <path d="M221,224 L221,128 Q221,124 225,124 L261,124 Q265,124 265,128 L265,224 Z" fill="#04B4A2" style="cursor:pointer" onmouseenter="showDetailTip(event,'5–6 guests (last week)','189 guests','↑ 6.2% vs. 3-wk avg')" onmouseleave="hideDetailTip()"/>
           <path d="M323,224 L323,186 Q323,182 327,182 L363,182 Q367,182 367,186 L367,224 Z" fill="#D4DDFF" style="cursor:pointer" onmouseenter="showDetailTip(event,'7+ guests (3-wk avg)','74 guests',null)" onmouseleave="hideDetailTip()"/>
-          <path d="M371,224 L371,182 Q371,178 375,178 L411,178 Q415,178 415,182 L415,224 Z" fill="#04B4A2" style="cursor:pointer" onmouseenter="showDetailTip(event,'7+ guests (this week)','82 guests','↑ 10.8% vs. 3-wk avg')" onmouseleave="hideDetailTip()"/>
+          <path d="M371,224 L371,182 Q371,178 375,178 L411,178 Q415,178 415,182 L415,224 Z" fill="#04B4A2" style="cursor:pointer" onmouseenter="showDetailTip(event,'7+ guests (last week)','82 guests','↑ 10.8% vs. 3-wk avg')" onmouseleave="hideDetailTip()"/>
         </svg>
         <div style="display:grid;grid-template-columns:repeat(3,1fr);padding-top:6px;padding-bottom:4px;">
           <span style="font-size:12px;color:#676D74;font-family:'Roboto',sans-serif;text-align:center;">1–4 guests</span>
@@ -3383,7 +3434,7 @@
     </div>
     <div style="display:flex;justify-content:center;gap:32px;padding-top:20px;padding-bottom:4px;">
       <div style="display:flex;align-items:center;gap:10px;"><div style="width:16px;height:16px;border-radius:4px;background:#D4DDFF;flex-shrink:0;"></div><span style="font-size:14px;color:#676D74;font-family:'Roboto',sans-serif;">3-wk avg</span></div>
-      <div style="display:flex;align-items:center;gap:10px;"><div style="width:16px;height:16px;border-radius:4px;background:#04B4A2;flex-shrink:0;"></div><span style="font-size:14px;color:#676D74;font-family:'Roboto',sans-serif;">This week</span></div>
+      <div style="display:flex;align-items:center;gap:10px;"><div style="width:16px;height:16px;border-radius:4px;background:#04B4A2;flex-shrink:0;"></div><span style="font-size:14px;color:#676D74;font-family:'Roboto',sans-serif;">Last week</span></div>
     </div>
   </div>
 </div>
@@ -3411,7 +3462,7 @@
     <div style="display:grid;grid-template-columns:1fr 110px 110px 130px;background:#F4F7FA;">
       <div style="padding:12px 16px;font-size:14px;font-weight:600;letter-spacing:0.2px;color:#141623;font-family:'Roboto',sans-serif;">Party size</div>
       <div style="padding:12px 16px;font-size:14px;font-weight:600;letter-spacing:0.2px;color:#141623;font-family:'Roboto',sans-serif;">3-wk avg</div>
-      <div style="padding:12px 16px;font-size:14px;font-weight:600;letter-spacing:0.2px;color:#141623;font-family:'Roboto',sans-serif;">This week</div>
+      <div style="padding:12px 16px;font-size:14px;font-weight:600;letter-spacing:0.2px;color:#141623;font-family:'Roboto',sans-serif;">Last week</div>
       <div style="padding:12px 16px;font-size:14px;font-weight:600;letter-spacing:0.2px;color:#141623;font-family:'Roboto',sans-serif;text-align:right;">Difference</div>
     </div>
     <div style="display:grid;grid-template-columns:1fr 110px 110px 130px;border-top:1px solid #E2E9F3;align-items:center;">
@@ -3567,7 +3618,7 @@
 <div id="chart-discounts-time">
   <div style="padding:4px 0 12px;">
     <div style="display:flex;align-items:stretch;gap:4px;">
-      <div style="display:flex;flex-direction:column;justify-content:space-between;flex-shrink:0;padding-bottom:28px;text-align:right;">
+      <div style="display:flex;flex-direction:column;justify-content:space-between;flex-shrink:0;padding-bottom:74px;text-align:right;">
         <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;white-space:nowrap;">$3,500</span>
         <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;white-space:nowrap;">$2,625</span>
         <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;white-space:nowrap;">$1,750</span>
@@ -3577,14 +3628,14 @@
       <div style="flex:1;min-width:0;display:flex;flex-direction:column;">
         <svg width="100%" height="210" viewBox="0 0 440 228" preserveAspectRatio="none" style="display:block;">
           <line x1="0" y1="20" x2="440" y2="20" stroke="#E2E9F3" stroke-width="1"/>
-          <line x1="0" y1="75" x2="440" y2="75" stroke="#E2E9F3" stroke-width="1"/>
-          <line x1="0" y1="130" x2="440" y2="130" stroke="#E2E9F3" stroke-width="1"/>
-          <line x1="0" y1="185" x2="440" y2="185" stroke="#E2E9F3" stroke-width="1"/>
+          <line x1="0" y1="71" x2="440" y2="71" stroke="#E2E9F3" stroke-width="1"/>
+          <line x1="0" y1="122" x2="440" y2="122" stroke="#E2E9F3" stroke-width="1"/>
+          <line x1="0" y1="173" x2="440" y2="173" stroke="#E2E9F3" stroke-width="1"/>
           <line x1="0" y1="224" x2="440" y2="224" stroke="#E2E9F3" stroke-width="1"/>
-          <path d="M41,224 L41,77 Q41,73 45,73 L65,73 Q69,73 69,77 L69,224 Z" fill="#D4DDFF" style="cursor:pointer" onmouseenter="showDetailTip(event,'3 weeks ago','$2,520 total discounts',null)" onmouseleave="hideDetailTip()"/>
-          <path d="M151,224 L151,56 Q151,52 155,52 L175,52 Q179,52 179,56 L179,224 Z" fill="#D4DDFF" style="cursor:pointer" onmouseenter="showDetailTip(event,'2 weeks ago','$2,890 total discounts',null)" onmouseleave="hideDetailTip()"/>
-          <path d="M261,224 L261,70 Q261,66 265,66 L285,66 Q289,66 289,70 L289,224 Z" fill="#D4DDFF" style="cursor:pointer" onmouseenter="showDetailTip(event,'Last week','$2,640 total discounts',null)" onmouseleave="hideDetailTip()"/>
-          <path d="M371,224 L371,66 Q371,62 375,62 L395,62 Q399,62 399,66 L399,224 Z" fill="#EC863A" style="cursor:pointer" onmouseenter="showDetailTip(event,'This week','$2,787 total discounts','↑ 8.3% vs. 3-wk avg')" onmouseleave="hideDetailTip()"/>
+          <path d="M41,224 L41,77 Q41,73 45,73 L65,73 Q69,73 69,77 L69,224 Z" fill="#D4DDFF" style="cursor:pointer" onmouseenter="showDetailTip(event,'May 23','$2,520 total discounts',null)" onmouseleave="hideDetailTip()"/>
+          <path d="M151,224 L151,56 Q151,52 155,52 L175,52 Q179,52 179,56 L179,224 Z" fill="#D4DDFF" style="cursor:pointer" onmouseenter="showDetailTip(event,'May 30','$2,890 total discounts',null)" onmouseleave="hideDetailTip()"/>
+          <path d="M261,224 L261,70 Q261,66 265,66 L285,66 Q289,66 289,70 L289,224 Z" fill="#D4DDFF" style="cursor:pointer" onmouseenter="showDetailTip(event,'Jun 6','$2,640 total discounts',null)" onmouseleave="hideDetailTip()"/>
+          <path d="M371,224 L371,66 Q371,62 375,62 L395,62 Q399,62 399,66 L399,224 Z" fill="#EC863A" style="cursor:pointer" onmouseenter="showDetailTip(event,'Jun 13','$2,787 total discounts','↑ 8.3% vs. 3-wk avg')" onmouseleave="hideDetailTip()"/>
           <!-- 3-wk avg flat line (default visible, avg of prior 3 weeks ≈ $2,683 → y=68) -->
           <line class="detail-avg-line" x1="0" y1="68" x2="440" y2="68" stroke="#8896AB" stroke-width="1.5" stroke-dasharray="5 3"/>
           <!-- prior year per-bar segments (hidden until last-year selected) -->
@@ -3596,19 +3647,23 @@
           </g>
         </svg>
         <div style="display:grid;grid-template-columns:repeat(4,1fr);padding-top:6px;padding-bottom:4px;">
-          <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;text-align:center;">3 wks ago</span>
-          <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;text-align:center;">2 wks ago</span>
-          <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;text-align:center;">Last week</span>
-          <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;text-align:center;">This week</span>
+          <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;text-align:center;">May 23</span>
+          <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;text-align:center;">May 30</span>
+          <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;text-align:center;">Jun 6</span>
+          <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;text-align:center;">Jun 13</span>
         </div>
-        <div style="display:flex;justify-content:center;gap:32px;padding-top:12px;">
+        <div style="display:flex;justify-content:center;gap:24px;padding-top:16px;padding-bottom:12px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:8px;">
+            <div style="width:16px;height:16px;border-radius:4px;background:#EC863A;flex-shrink:0;"></div>
+            <span style="font-size:13px;color:#676D74;font-family:'Roboto',sans-serif;">Last week</span>
+          </div>
           <div style="display:flex;align-items:center;gap:8px;">
             <svg width="24" height="10" viewBox="0 0 24 10" style="flex-shrink:0;"><line x1="0" y1="5" x2="24" y2="5" stroke="#8896AB" stroke-width="1.5" stroke-dasharray="3 2"/></svg>
             <span id="legend-discounts-time" style="font-size:13px;color:#676D74;font-family:'Roboto',sans-serif;">3-wk avg</span>
           </div>
         </div>
       </div>
-      <div style="display:flex;flex-direction:column;justify-content:space-between;flex-shrink:0;padding-bottom:28px;text-align:left;">
+      <div style="display:flex;flex-direction:column;justify-content:space-between;flex-shrink:0;padding-bottom:74px;text-align:left;">
         <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;white-space:nowrap;">$3,500</span>
         <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;white-space:nowrap;">$2,625</span>
         <span style="font-size:11px;color:#676D74;font-family:'Roboto',sans-serif;white-space:nowrap;">$1,750</span>
@@ -3626,7 +3681,7 @@
               <div style="display:grid;grid-template-columns:1fr 110px 110px 130px;background:#F4F7FA;">
                 <div style="padding:12px 16px;font-size:14px;font-weight:600;letter-spacing:0.2px;color:#141623;font-family:'Roboto',sans-serif;">Discount type</div>
                 <div style="padding:12px 16px;font-size:14px;font-weight:600;letter-spacing:0.2px;color:#141623;font-family:'Roboto',sans-serif;">3-wk avg</div>
-                <div style="padding:12px 16px;font-size:14px;font-weight:600;letter-spacing:0.2px;color:#141623;font-family:'Roboto',sans-serif;">This week</div>
+                <div style="padding:12px 16px;font-size:14px;font-weight:600;letter-spacing:0.2px;color:#141623;font-family:'Roboto',sans-serif;">Last week</div>
                 <div style="padding:12px 16px;font-size:14px;font-weight:600;letter-spacing:0.2px;color:#141623;font-family:'Roboto',sans-serif;text-align:right;">Difference</div>
               </div>
               <div style="display:grid;grid-template-columns:1fr 110px 110px 130px;border-top:1px solid #E2E9F3;align-items:center;">
@@ -4107,6 +4162,8 @@
     document.getElementById('detail-sunday').style.display    = type === 'sunday'     ? 'block' : 'none';
     document.getElementById('detail-discounts').style.display = type === 'discounts'  ? 'block' : 'none';
 
+    // Always reset to 'over time' view when opening a detail panel
+    ['positive','negative','labor','sunday','discounts'].forEach(function(k) { setChartView(k, 'time'); });
     document.querySelector('.main').scrollTop = 0;
   }
   function closeInsightDetail() {
